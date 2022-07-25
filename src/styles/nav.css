@@ -1,0 +1,29 @@
+.nav{
+    background-color: rgb(86, 198, 243);
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    margin: 0;
+    height: 60px;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    margin: 0 15px;
+    color: #fff;
+    transition: all 500ms ease-in-out;
+
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.active{
+    font-weight: bold;
+    text-decoration: underline;
+}
