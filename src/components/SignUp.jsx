@@ -15,7 +15,6 @@ export default function SignUp() {
         }
     }, [])
 
-
     const formHandler = async () => {
         console.log(name, email, password);
 
@@ -31,7 +30,7 @@ export default function SignUp() {
         localStorage.setItem("user", JSON.stringify(result));
 
         if (result) {
-            navigate('/')
+            navigate('/login')
         }
     }
 
