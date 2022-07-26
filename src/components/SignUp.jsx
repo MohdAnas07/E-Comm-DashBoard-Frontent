@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/signup.css'
 
 export default function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const auth = localStorage.getItem("user");
+        if (auth) {
+            navigate('/');
+        }
+    }, [])
+
 
     const formHandler = async () => {
         console.log(name, email, password);
@@ -18,14 +28,16 @@ export default function SignUp() {
         let result = await data.json();
         console.log(result);
 
-        // setName("");
-        // setEmail("");
-        // setPassword("");
+        localStorage.setItem("user", JSON.stringify(result));
+
+        if (result) {
+            navigate('/')
+        }
     }
 
     return (
         <div className='signup'>
-            <h1>Register For Dashboard</h1>
+            <h1>Register For E-Commerce Dashboard</h1>
             <form action="">
                 <input className='input-box' value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='Enter Name' />
                 <input className='input-box' value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter Email' />
