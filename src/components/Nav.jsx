@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import '../styles/nav.css'
+import '../App.css'
 import dashboard from '../assets/dashboard.png'
 
 const Nav = () => {

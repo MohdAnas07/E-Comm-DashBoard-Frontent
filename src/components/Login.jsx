@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../styles/signup.css'
+import '../App.css'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
@@ -36,12 +36,13 @@ const Login = () => {
 
     return (
         <div className='login'>
+
             <h1>Login For E-Commerce Dashboard</h1>
-
-            <input className='input-box' value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter Email' />
-
-            <input className='input-box' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Enter Password' />
-            <button className='app-button' onClick={loginHandler} type='button'>Login</button>
+            <form action="">
+                <input className='input-box' value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter Email' />
+                <input className='input-box' value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Enter Password' />
+                <button className='app-button' onClick={loginHandler} type='button'>Login</button>
+            </form>
         </div>
 
     )
