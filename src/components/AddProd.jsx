@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function AddProd() {
 
@@ -10,6 +12,10 @@ export default function AddProd() {
     const [error, setError] = useState(false);
     const [add, setAdd] = useState(false);
 
+    const notify = () => toast.success('Product Added !', {
+        hideProgressBar: true,
+        autoClose: 1000,
+    });
 
 
     const productHandler = async () => {
@@ -32,6 +38,7 @@ export default function AddProd() {
 
         if (result) {
             console.log(result);
+            notify()
             setAdd(true);
             setTimeout(() => {
                 setAdd(false)
@@ -62,6 +69,8 @@ export default function AddProd() {
 
                 <button onClick={productHandler} className='app-button' type='button'>{add ? "Added" : "Add Product"}</button>
             </form>
+
+            <ToastContainer />
         </div>
     )
 }
