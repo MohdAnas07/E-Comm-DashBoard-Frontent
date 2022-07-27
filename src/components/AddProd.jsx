@@ -43,7 +43,6 @@ export default function AddProd() {
             setTimeout(() => {
                 setAdd(false)
             }, 1200);
-            // setName(""); setCategory(""); setCompany(""); setPrice("");
 
         } else {
 

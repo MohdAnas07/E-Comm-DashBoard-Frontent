@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -53,7 +54,10 @@ export default function Products() {
                             <li>{product.name} </li>
                             <li>${product.price} </li>
                             <li>{product.category} </li>
-                            <li><button onClick={() => deleteProduct(product._id)}>Delete</button></li>
+                            <li>
+                                <button className='delete-button' title='Delete product' onClick={() => deleteProduct(product._id)}>Delete</button>
+                                <Link to={`/update/${product._id}`} ><button className='update-button' >Update</button></Link>
+                            </li>
                         </ul>
                     )
                 }

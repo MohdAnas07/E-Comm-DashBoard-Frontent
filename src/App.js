@@ -21,7 +21,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path='/' element={<Products />} />
             <Route path='/add' element={<AddProd />} />
-            <Route path='/update' element={<UpdateProd />} />
+            <Route path='/update/:id' element={<UpdateProd />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/logout' element={<h1>You are Logout.</h1>} />
           </Route>

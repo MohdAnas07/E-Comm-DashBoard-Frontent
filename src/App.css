@@ -101,6 +101,21 @@ a{
   /* font-weight: bold; */
 }
 
+.delete-button{
+  background: red;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 2px;
+}
+
+.update-button{
+  background: green;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .product-list ul{
   margin: 0;
 }
