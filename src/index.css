@@ -18,3 +18,7 @@ code {
 
   --primary-color:rgb(86, 198, 243);
 }
+
+.main-heading{
+  margin: 0;
+}

@@ -30,9 +30,9 @@ function App() {
           <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
 
+// <Footer />
 export default App;

@@ -23,13 +23,14 @@
   margin:2px 20px 0 25px;
 }
 
-li{
+.nav li{
   list-style: none;
   margin: 0 15px;
   color: #fff;
   transition: all 500ms ease-in-out;
 
 }
+
 a{
   text-decoration: none;
   color: #fff;
@@ -44,6 +45,7 @@ a{
 
 /*  SIGNUP - SIGNIN CSS ============================ */
 
+
 .signup , .login {
   display: grid;
   place-items: center;
@@ -52,6 +54,13 @@ a{
 .center{
   display: grid;
   place-items: center;
+}
+
+.invalid-input{
+  margin-top: -25px;
+  margin-left: 25px;
+  display: block;
+  color: red;
 }
 
 .input-box{
@@ -74,6 +83,26 @@ a{
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
+}
+
+
+
+/* PRODUCTS LIST CSS ======================================= */
+
+.product-list{
+  text-align: center;
+}
+
+.product-list ul li{
+  display: inline-block;
+  border: 1px solid var(--primary-color);
+  width: 150px;
+  padding: 10px;
+  /* font-weight: bold; */
+}
+
+.product-list ul{
+  margin: 0;
 }
 
 
