@@ -42,7 +42,6 @@ export default function UpdateProd() {
         })
 
         result = await result.json()
-
         console.log(result)
 
         if (result) {

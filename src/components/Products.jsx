@@ -24,7 +24,6 @@ export default function Products() {
     }
 
     const deleteProduct = async (id) => {
-        console.log(id);
         let result = await fetch(`http://localhost:5000/product/${id}`, {
             method: 'Delete'
         })
@@ -36,10 +35,26 @@ export default function Products() {
         }
     }
 
+    const searchHandler = async (event) => {
+        let key = event.target.value;
+        if (key) {
+            let result = await fetch(`http://localhost:5000/search/${key}`)
+            result = await result.json();
+            if (result) {
+                setProducts(result)
+            }
+        } else {
+            getProducts();
+        }
+    }
+
     return (
         <div className='products'>
             <h2 style={{ 'textAlign': 'center' }}>Products List</h2>
+
             <div className="product-list">
+                <input type="text" className='product-search-box' placeholder='Search Product'
+                    onChange={(e) => searchHandler(e)} />
                 <ul style={{ 'fontWeight': 'bold' }}>
                     <li>S No.</li>
                     <li>Name</li>
@@ -48,7 +63,7 @@ export default function Products() {
                     <li>Operation</li>
                 </ul>
                 {
-                    products.map((product, index) =>
+                    products.length > 0 ? products.map((product, index) =>
                         <ul key={product._id}>
                             <li>{index + 1}</li>
                             <li>{product.name} </li>
@@ -60,6 +75,8 @@ export default function Products() {
                             </li>
                         </ul>
                     )
+                        :
+                        <h1>No Result Found</h1>
                 }
 
             </div>
