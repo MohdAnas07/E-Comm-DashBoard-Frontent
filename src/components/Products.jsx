@@ -24,20 +24,24 @@ export default function Products() {
             }
         });
         result = await result.json();
-        console.log(result, localStorage.getItem('token'))
         setProducts(result);
     }
 
     const deleteProduct = async (id) => {
-        let result = await fetch(`http://localhost:5000/product/${id}`, {
-            method: 'Delete'
-        })
-        result = await result.json()
+        const isdelete = window.confirm("do you really want to delete this product?");
 
-        if (result) {
-            notify();
-            getProducts();
+        if (isdelete) {
+            let result = await fetch(`http://localhost:5000/product/${id}`, {
+                method: 'Delete'
+            })
+            result = await result.json()
+
+            if (result) {
+                notify();
+                getProducts();
+            }
         }
+
     }
 
     const searchHandler = async (event) => {
