@@ -27,7 +27,8 @@ export default function SignUp() {
         let result = await data.json();
         console.log(result);
 
-        localStorage.setItem("user", JSON.stringify(result));
+        localStorage.setItem("user", JSON.stringify(result.user));
+        localStorage.setItem("token", JSON.stringify(result.auth));
 
         if (result) {
             navigate('/login')

@@ -18,8 +18,13 @@ export default function Products() {
     }, [])
 
     const getProducts = async () => {
-        let result = await fetch('http://localhost:5000/products');
+        let result = await fetch('http://localhost:5000/products', {
+            headers: {
+                authorization: JSON.stringify(localStorage.getItem('token'))
+            }
+        });
         result = await result.json();
+        console.log(result, localStorage.getItem('token'))
         setProducts(result);
     }
 

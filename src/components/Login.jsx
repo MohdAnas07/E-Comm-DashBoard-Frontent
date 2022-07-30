@@ -25,8 +25,9 @@ const Login = () => {
 
         console.log(result);
 
-        if (result.name) {
-            localStorage.setItem("user", JSON.stringify(result))
+        if (result.auth && result.user.name) {
+            localStorage.setItem("user", JSON.stringify(result.user))
+            localStorage.setItem("token", JSON.stringify(result.auth))
             navigate('/');
 
         } else {
